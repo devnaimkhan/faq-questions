@@ -32,6 +32,26 @@ body {
   border-radius: 10px;
   padding: 15px;
   cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3 ease;
+}
+#main_area .faq_card .body {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.4s ease,
+    opacity 0.3s ease,
+    margin-top 0.3s ease;
+}
+#main_area .faq_card.active .body {
+  opacity: 1;
+  margin-top: 10px;
+}
+#main_area .faq_card .body p {
+  color: #555;
+  line-height: 1.6;
 }
 #main_area .faq_card .head {
   display: flex;
@@ -43,8 +63,12 @@ body {
 #main_area .faq_card .head span {
   font-weight: 400;
 }
-#main_area .faq_card .body {
-  display: none;
+#main_area .faq_card .head span i {
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+#main_area .faq_card.active .head span i {
+  transform: rotate(45deg);
 }
 
 @media (max-width: 768px) {
